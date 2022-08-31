@@ -1,8 +1,8 @@
 algoritmo "semnome"
-// FunÁ„o :
-// Autor :
+// Fun√ß√£o : Jogo da velha par terminal
+// Autor : Gabriel Pimentel de Castro Costa
 // Data : 13/12/2018
-// SeÁ„o de DeclaraÁıes
+// Se√ß√£o de Declara√ß√µes
 var
 tabuleiro: vetor [0..2, 0..2] de caractere
 peca, nome: vetor [1..2] de caracter
@@ -19,8 +19,8 @@ para i de 0 ate 2 faca
    fimpara
 fimpara
 
-escreval("Ol· Bem vindo ao Jogo Da Velha")
-escreval("Esse È nosso Tabuleiro")
+escreval("Ol√° Bem vindo ao Jogo Da Velha")
+escreval("Esse √© nosso Tabuleiro")
 escreval
 escreval(" A | B | C ")
 escreval("___|___|___")
@@ -38,11 +38,11 @@ repita
    escreval("Digite o nome do Primeiro Jogador")
    leia(nome[1])
    escreval
-   nome[2]:= "M·quina"
+   nome[2]:= "M√°quina"
    se nome[1]=nome[2] entao
       rept:=verdadeiro
       limpatela
-      escreval("Os nomes dos jogadores n„o podem iguais")
+      escreval("Os nomes dos jogadores n√£o podem iguais")
    fimse
 ate rept=falso
 
@@ -52,14 +52,14 @@ limpatela
 repita
    rept:=falso
    peca[2] := "O"
-   escreval("O simbolo da ",nome[2]," È ", peca[2])
+   escreval("O simbolo da ",nome[2]," √© ", peca[2])
    escreval("Digite o simbolo de(a) gamer ",nome[1])
    leia(peca[1])
    escreval
    se nome[1]=nome[2] entao
       rept:=verdadeiro
       limpatela
-      escreval("Os Simbolos dos jogadores n„o podem ser iguais")
+      escreval("Os Simbolos dos jogadores n√£o podem ser iguais")
    fimse
 ate rept=falso
 
@@ -69,7 +69,7 @@ troca := nome[1]
 rodada:=0
 repita
    rodada := rodada+1
-   escreval("       E ComeÁa o Jogo")
+   escreval("       E Comece o Jogo")
 
    repita //Repita para Mudar de Vez de Jogador
       limpatela
@@ -90,9 +90,9 @@ repita
 
       limpatela
       repita //Caso o individuo digite em local ja preechido ele volta a esse local
-         escreval(rodada,"∞ Rodade")
+         escreval(rodada,"¬∫ Rodada")
          escreval
-         escreval("PontuaÁ„o: ")
+         escreval("Pontua√ß√£o: ")
          escreval(nome[1]," ",peca[1],": ",ponto[1])
          escreval(nome[2]," ",peca[2],": ",ponto[2])
          escreval
@@ -137,13 +137,13 @@ repita
                escreval("Vez de: ",nomeVez)
                se (lugarRepetido=verdadeiro) entao
                   lugarRepetido:=falso
-                  escreval("Esse local j· esta preechido!!!")
+                  escreval("Esse local j√° est√° preechido!!!")
                fimse
 
-               escreval("Digite a Letra Referente ao lugar em que vocÍ quer jogar")
+               escreval("Digite a Letra Referente ao lugar em que voc√™ quer jogar")
                leia(lugar)
 
-               //SeÁ„o LÛgica do Jogo onde È impresso cada Simbolo
+               //Se√ß√£oo L√≥gica do Jogo onde √© impresso cada Simbolo
                escolha lugar
                caso "a"
                   m:=0
@@ -187,7 +187,7 @@ repita
                   rept := verdadeiro
                fimescolha
 
-               //Se o local onde foi digitado o simbulo j· foi preechido ele pede novamente o Dado
+               //Se o local onde foi digitado o simbolo j≈õ foi preechido ele pede novamente o Dado
                se tabuleiro[m,n] <> " " entao
                   LugarRepetido:=verdadeiro
                   fim := falso
@@ -198,7 +198,7 @@ repita
             ate rept = falso
 
          senao
-            se nomeVez = nome[2] entao//Parte logica do Jogo da M·quina
+            se nomeVez = nome[2] entao//Parte logica do Jogo da M√°quina
 
                se  ((tabuleiro[0,2] = tabuleiro[2,0]) e (tabuleiro[0,2] = peca[1]) e (((tabuleiro[1,0] = " ") ou (tabuleiro[1,2] = " ")))) entao
                   escreval("Eu entrei no primeir Se")
@@ -234,7 +234,7 @@ repita
                   fimse
                fimse
 
-               //AvaliaÁao se ha posibilidade de de Vencer se tiver ele n„o faz jogada aleatoria
+               //Avalia√ß√£o se ha posibilidade de de Vencer se tiver ele n√£o faz jogada aleatoria
                para i de 0 ate 2 faca
                   //Analisa as Linhas
                   se  ((tabuleiro[i,0] = tabuleiro[i,1]) e (tabuleiro[i,0] = peca[2]) e (tabuleiro[i,2] = " ")) entao
@@ -320,7 +320,7 @@ repita
                fimse
 
 
-               //Analisa a Diagonal Secund·ria
+               //Analisa a Diagonal Secund√°ria
                se  ((tabuleiro[0,2] = tabuleiro[1,1]) e (tabuleiro[0,2] = peca[2]) e (tabuleiro[2,0] = " ")) entao
                   m:=2
                   n:=0
@@ -351,7 +351,7 @@ repita
 
                   aleatoria := verdadeiro
 
-                  //AvaliaÁao se ha posibilidade de de Vencer se tiver ele n„o faz jogada aleatoria
+                  //Avalia√ß√£o se ha posibilidade de de Vencer se tiver ele n√£o faz jogada aleatoria
                   para i de 0 ate 2 faca
                      //Analisa as Linhas
                      se  ((tabuleiro[i,0] = tabuleiro[i,1]) e (tabuleiro[i,0] <> " ") e (tabuleiro[i,2] = " ")) entao
@@ -438,7 +438,7 @@ repita
                      fimse
 
 
-                     //Analisa a Diagonal Secund·ria
+                     //Analisa a Diagonal Secund√°ria
                      se  ((tabuleiro[0,2] = tabuleiro[1,1]) e (tabuleiro[0,2] <> " ") e (tabuleiro[2,0] = " ")) entao
                         m:=2
                         n:=0
@@ -464,7 +464,7 @@ repita
                      fimse
                   fimse
 
-                  //SeÁ„o de Jogadas Aleatorias
+                  //Se√ß√£o de Jogadas Aleatorias
                   se aleatoria = verdadeiro entao
                      se (tabuleiro[1,1] = " ") entao
                         tabuleiro[1,1] := pecaVez
@@ -514,7 +514,7 @@ repita
                               fimescolha
                            fimse
 
-                           se tabuleiro[m,n] <> " " entao //Se o local onde foi digitado o simbolo j· foi preechido ele pede novamente o Dado
+                           se tabuleiro[m,n] <> " " entao //Se o local onde foi digitado o simbolo j√° foi preechido ele pede novamente o Dado
                               fim := falso
                               aleatoria := verdadeiro
                            senao
@@ -525,7 +525,7 @@ repita
                      fimse
                   fimse
                fimse
-               //se tabuleiro[m,n] <> " " entao /Se o local onde foi digitado o simbulo j· foi preechido ele pede novamente o Dado
+               //se tabuleiro[m,n] <> " " entao /Se o local onde foi digitado o simbulo j√° foi preechido ele pede novamente o Dado
                //  LugarRepetido:=verdadeiro
                // fim := falso
                //senao
@@ -539,7 +539,7 @@ repita
       ate fim=verdadeiro
 
       se (nomeVez = nome[1]) ou (nomeVez = nome[2]) entao
-         //Verifica se h· um Ganhador
+         //Verifica se h√° um Ganhador
          fim:=falso
          para i de 0 ate 2 faca
             //Verifica todas as Colunas
@@ -562,7 +562,7 @@ repita
             se fim=verdadeiro entao
                limpatela
                escreval("Temos um Vencedor!!!")
-               escreval("ParabÈns Jogador ",nomeVez)
+               escreval("Parab√©ns Jogador ",nomeVez)
                ponto[index] := ponto[index] + 1
                escreval(" ",tabuleiro[0,0]," | ",tabuleiro[0,1]," | ",tabuleiro[0,2]," ")
                escreval("___|___|___")
@@ -581,7 +581,7 @@ repita
 
    fim:=falso
    escreval("Voce deseja Jogar Outra Partida?")
-   escreval("S - Sim ou N - N„o")
+   escreval("S - Sim ou N - N√£o")
    leia(lugar)
    se lugar = "n" entao
       fim:=verdadeiro
